@@ -1,0 +1,34 @@
+.reviewsOfTheDays {
+  width: 90%;
+  height: auto;
+  margin-top: 45px;
+  color: var(--text-title-section);
+
+  .titles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1.5rem;
+    margin-bottom: 15px;
+
+    p {
+      font-size: 1.285rem;
+      letter-spacing: 0.03125rem;
+      font-weight: 500;
+    };
+
+    a {
+      color: var(--link-redirection)
+    }
+  }
+
+  .cardBook {
+    width: 100%;
+    height: 121px;
+    border-radius: 5px 5px 0 0;
+    background-image: url("https://i.ytimg.com/vi/vBzBgewl4ac/maxresdefault.jpg");
+    background-size: cover;
+    background-position: center 10%;
+    background-repeat: no-repeat;
+  }
+}

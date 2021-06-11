@@ -1,0 +1,26 @@
+.inputSearchBox {
+  width: 90%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 50px;
+
+  img {
+    margin-right: 12px;
+    margin-left: 12px;
+  };
+
+  input {
+    flex: 1;
+    border: none;
+    padding: 0 4px 0 4px;
+    font-family: "SF Pro Text";
+    color: #54565A;
+    outline: none;
+    
+  }
+}

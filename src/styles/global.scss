@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #F2F2F2;
+  --link-redirection: #4ABDF1;
+  --highlighted-text: #FF6978;
+  --text-title: #36383A;
+  --text-extracted: rgba(49,49,49,0.6);
+  --text-on-search: rgba(49,49,49,0.8);
+  --text-title-section: #3F4043;
+  --inactive-color: #BFBEBF;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%
+  }
+}
+
+body {
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+}
+
+body, input, textarea, select, button {
+  font-family: "SF Pro Text", -apple-system, system-ui, "BlinkMacSystemFont", sans-serif;
+  font-weight: 400;
+}
+
+input::-ms-clear, input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input::-webkit-search-decoration, input::-webkit-search-cancel-button, input::-webkit-search-results-button, input::-webkit-search-results-decoration {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

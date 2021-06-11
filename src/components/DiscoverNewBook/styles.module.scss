@@ -1,0 +1,120 @@
+.discoverNewBook {
+  width: 90%;
+  height: auto;
+  margin-top: 30px;
+  color: var(--text-title-section);
+  position: relative;
+
+  .titles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1.5rem;
+    margin-bottom: 15px;
+
+    p {
+      font-size: 1.285rem;
+      letter-spacing: 0.03125rem;
+      font-weight: 500;
+    };
+
+    a {
+      color: var(--link-redirection)
+    }
+  }
+
+  .cardBook {
+    width: 272px;
+    height: 139px;
+    border-radius: 5px;
+    background-color: #00173D;
+    position: relative;
+
+    .cardBookInfo {
+      width: 100%;
+      height: 100%;      
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      
+      .cardBookInfoText {
+        height:100%;
+        margin-left: 20px;
+        z-index: 999;
+      }
+
+      .cardBookInfoText p:nth-child(1) {
+        color: #FEFEFE;
+        font-family: "Playfair Display";
+        font-weight: 700;
+        font-size: 1.9285rem;
+        line-height: 2.57rem;
+        letter-spacing: 0.125rem;
+        margin-top: 17px;
+      }
+
+      .cardBookInfoText p:nth-child(2):not(:last-child) {
+        color: #E7E7E1;
+        font-style: italic;
+        line-height: 1.1721rem;
+        letter-spacing: 0.080625rem;
+        margin-top: 5px;
+      }
+
+      .readNow {
+        display: flex;
+        align-items: center;
+        font-size: 0.7142rem;
+        line-height: 0.852rem;
+        color: #E7E7E1;
+        margin-top: 30px;
+
+        p {
+          margin-left: 3.33px;
+        }
+
+        span {
+          font-weight: 700;
+        }
+      }
+
+      .cardBookInfoImage {
+        clip-path: inset( .5px .5px .5px .5px round 2.5px);
+        margin-right: 20px;
+        justify-self: end;
+        align-self: center;
+      }
+    }
+  }
+
+  .ovalImageWaves {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .Oval {
+    position: absolute;
+    right: 110px;
+    top: 14px
+  }
+
+  .Triangle {
+    position: absolute;
+    right: 71px;
+    top: 3.8px;
+    z-index: 1;
+  }
+
+  .Rectangle {
+    position: absolute;
+    left: 144px;
+    bottom: 28.5px;
+    z-index: 1;
+  }
+
+  .ovalRight {
+    position: absolute;
+    right: -5%;
+    z-index: -1;
+  }
+}

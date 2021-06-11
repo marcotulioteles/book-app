@@ -1,0 +1,120 @@
+.currentlyReading {
+  width: 90%;
+  height: 151px;
+  margin-top: 30px;
+  color: var(--text-title-section);
+  position: relative;
+
+  .titles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1.5rem;
+    margin-bottom: 30px;
+
+    p {
+      font-size: 1.285rem;
+      letter-spacing: 0.03125rem;
+      font-weight: 500;
+    };
+
+    a {
+      color: var(--link-redirection)
+    }
+  }
+
+  .cardBook {
+    width: 95%;
+    max-width: 331px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: #EEF5DB;
+    position: absolute;
+    left: -5%;
+
+    .ovalFull {
+      clip-path: inset(25px 30px 0 0 round 5px);
+      border-radius: 0 5px 0 0;
+      position: absolute;
+      top: -25px;
+      right: -30px;
+    }
+
+    .grayOval {
+      clip-path: inset(0 20px 40px 0 round 5px);
+      position: absolute;
+      right: -20px;
+      bottom: -40px
+    }
+
+    .Rectangle {
+      clip-path: inset(0 20px 0 0 );
+      position: absolute;
+      right: -20px;
+      bottom: 25px
+    }
+
+    .Oval {
+      clip-path: inset(8px 0 0 0);
+      position: absolute;
+      left: 223px;
+      top: -8px          
+    }
+
+    .bookCoverImage {
+      width: fit-content;
+      height: 136px;
+      position: absolute;
+      border-radius: 2.5px;
+      top: -18px;
+      left: 19px;
+      box-shadow: (0px 10px 20px -2px rgba(177, 196, 127, 0.45));
+
+      img {
+        clip-path: inset( .5px .5px .5px .5px round 2.5px);
+        height: 136px;
+      }
+    }
+
+    .bookInfo {
+      height: 100%;
+      margin-left: 118px;
+
+      .chapterMark {
+        display: flex;
+        align-items: center;
+        margin-top: 22px;
+
+        p {
+          font-family: "SF Pro Text";
+          font-weight: 700;
+          font-size: 0.7142rem;
+          letter-spacing: 0.0014285rem;
+          line-height: 0.8371rem;
+          margin-left: 5px;
+        }
+
+        span {
+          color: var(--highlighted-text)
+        }
+      }
+    }
+
+    .bookInfo p:first-child:not(:last-child) {
+      font-family: "Playfair Display";
+      font-weight: 700;
+      font-size: 1.4285rem;
+      letter-spacing: 0.14285rem;
+      line-height: 1.9042rem;
+      margin-top: 10px;
+    }
+
+    .bookInfo p:nth-child(2):not(:last-child) {
+      font-family: "Roboto";
+      font-size: 0.7142rem;
+      line-height: 0.8371rem;
+      color: #74776D;
+      margin-top: 5px;
+    }
+  }  
+}

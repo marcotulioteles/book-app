@@ -1,0 +1,38 @@
+.mainHome {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    width: 376px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+
+    
+  
+    .greetingUserContainer {
+      width: 90%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      margin-top: 30px;
+      font-size: 1.75rem;
+      line-height: 2.08rem;
+      font-weight: lighter;
+  
+      span {
+        font-weight: 600;
+        color: var(--highlighted-text);
+      }
+    }
+  }
+}
+
+
+

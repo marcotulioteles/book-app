@@ -1,0 +1,28 @@
+.container {
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  background-color: #FFFFFF;
+
+  .navContainer {
+    width: 100%;
+    height: 59px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    a {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.714285rem;
+
+      p {
+        margin-top: 11px;
+      }
+    }  
+  }H
+
+  .navContainer a:nth-child(n + 2) {
+    color: var(--inactive-color);
+  }
+}
