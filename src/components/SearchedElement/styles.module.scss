@@ -1,5 +1,4 @@
 .container {
-
   .booksContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -35,5 +34,13 @@
       font-size: 0.714285rem;
       margin-top: 5px;
     }
+  }
+
+  .notFoundMessage {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

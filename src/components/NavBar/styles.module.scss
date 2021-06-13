@@ -1,6 +1,6 @@
 .container {
-  width: 100%;
-  position: sticky;
+  width: 375px;
+  position: fixed;
   bottom: 0;
   background-color: #FFFFFF;
 
@@ -9,6 +9,7 @@
     height: 59px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    
     a {
       height: 100%;
       display: flex;
@@ -20,9 +21,9 @@
         margin-top: 11px;
       }
     }  
-  }H
+  }
 
-  .navContainer a:nth-child(n + 2) {
+  .navContainer a:nth-child(n + 2):not(:first-child) {
     color: var(--inactive-color);
   }
 }
