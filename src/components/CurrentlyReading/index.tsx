@@ -45,7 +45,7 @@ export function CurrentlyReading() {
         <img src="/images/gray-oval.png" alt="" className={styles.grayOval} />
         <img src="/images/rectangle.svg" alt="" className={styles.Rectangle} />
         <div className={styles.bookCoverImage}>
-          <img src="/images/originals.png" alt=""/>
+          <img src={homeBookObject.volumeInfo.imageLinks?.thumbnail} alt=""/>
         </div>
         <div className={styles.bookInfo}>
           <p>{homeBookObject.volumeInfo.title}</p>

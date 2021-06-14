@@ -34,6 +34,20 @@
       font-size: 0.714285rem;
       margin-top: 5px;
     }
+
+    .loadMoreButton {
+      width: 120px;
+      height: 24px;
+      position: fixed; 
+      top: 108px; 
+      right: 50vw;
+      margin-right: -60px;
+      margin-bottom: 75px;
+      border: none;
+      background-color: var(--text-title-section);
+      color: white;
+      border-radius: 4px;
+    }
   }
 
   .notFoundMessage {

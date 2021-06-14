@@ -16,8 +16,6 @@ export function Detail() {
     return {}
   })
 
-  console.log(book)
-  
   return (
     <main className={styles.mainDetail}>
       <div className={styles.container}>
@@ -31,7 +29,7 @@ export function Detail() {
           <img src="/images/oval.svg" alt="" className={styles.Oval} />
           <img src="/images/big-oval-right-detailpage.png" alt="" className={styles.bigOvalDetailPage}/>
           <div className={styles.bookCoverImage}>
-            <img src={book.volumeInfo.imageLinks.thumbnail} alt=""/>
+            <img src={book.volumeInfo.imageLinks?.thumbnail} alt=""/>
           </div>
         </div>
         <div className={styles.bookDetails}>

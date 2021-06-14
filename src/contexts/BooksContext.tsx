@@ -1,5 +1,4 @@
-import { SetStateAction } from "react";
-import { createContext, ReactNode, useState, useContext } from "react";
+import { createContext, ReactNode, useState, useContext, SetStateAction } from "react";
 
 type ImageLinks = {
   smallThumbnail: string;
@@ -22,16 +21,10 @@ export interface BooksData {
 interface BooksContextData {
   books: BooksData[];
   setBooks: React.Dispatch<SetStateAction<BooksData[]>>;
-  query: string;
-  setQuery: React.Dispatch<SetStateAction<string>>;
   debouncedInput: string;
   setDebouncedInput: React.Dispatch<SetStateAction<string>>
-  bookIndex: number;
-  setBookIndex: React.Dispatch<SetStateAction<number>>
   isError: boolean;
   setIsError: React.Dispatch<SetStateAction<boolean>>;
-  clickedBook: BooksData;
-  setClickedBook: React.Dispatch<SetStateAction<BooksData>>
 }
 
 interface BooksProviderProps {
@@ -41,30 +34,12 @@ interface BooksProviderProps {
 const BooksContext = createContext<BooksContextData>({} as BooksContextData)
 
 export function BooksProvider({ children }: BooksProviderProps) {
-  const [query, setQuery] = useState("")
   const [books, setBooks] = useState<BooksData[]>([])
   const [debouncedInput, setDebouncedInput] = useState("abc")
-  const [bookIndex, setBookIndex] = useState(0)
   const [isError, setIsError] = useState(false)
-  const [clickedBook, setClickedBook] = useState({} as BooksData)
     
   return (
-    <BooksContext.Provider value={
-      {
-        books, 
-        setBooks, 
-        query, 
-        setQuery, 
-        debouncedInput, 
-        setDebouncedInput, 
-        bookIndex, 
-        setBookIndex,
-        isError,
-        setIsError,
-        clickedBook,
-        setClickedBook
-      }
-    }>
+    <BooksContext.Provider value={{ books, setBooks, debouncedInput, setDebouncedInput, isError, setIsError, }}>
       {children}
     </BooksContext.Provider>
   )
@@ -72,34 +47,7 @@ export function BooksProvider({ children }: BooksProviderProps) {
 
 export function useBooks() {
   const context = useContext(BooksContext)
-  
-  const { 
-    books, 
-    setBooks, 
-    bookIndex, 
-    setBookIndex, 
-    clickedBook, 
-    setClickedBook, 
-    debouncedInput, 
-    setDebouncedInput,
-    query,
-    setQuery,
-    isError,
-    setIsError 
-  } = context
+  const { books, setBooks, debouncedInput, setDebouncedInput, isError, setIsError } = context
 
-  return {
-    books, 
-    setBooks, 
-    bookIndex, 
-    setBookIndex, 
-    clickedBook, 
-    setClickedBook, 
-    debouncedInput, 
-    setDebouncedInput,
-    query,
-    setQuery,
-    isError,
-    setIsError 
-  }
+  return { books, setBooks, debouncedInput, setDebouncedInput, isError, setIsError }
 }

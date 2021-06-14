@@ -6,7 +6,7 @@ import styles from "./styles.module.scss"
 
 export function SearchBook() {
   const [value, setValue] = useState<string>("")
-  const { setDebouncedInput, setIsError, setBooks, books } = useBooks()
+  const { setDebouncedInput, setIsError, setBooks } = useBooks()
   
   const debouncedValue = useDebounce<string>(value, 1000)
 
@@ -17,7 +17,7 @@ export function SearchBook() {
   useEffect(() => {
     async function loadBooks() {
       try {
-        const response = await api.get(`/books/v1/volumes?q=${debouncedValue}`)
+        const response = await api.get(`/books/v1/volumes?q=${debouncedValue}&maxResults=9`)
         const data = response.data
         setBooks(data.items)
       } catch (error) {

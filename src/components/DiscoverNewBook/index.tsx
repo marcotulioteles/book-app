@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { BooksData, useBooks } from "../../contexts/BooksContext"
+import { BooksData } from "../../contexts/BooksContext"
 import { api } from "../../services/api"
 import { storeClickedBook } from "../../utils/Functions"
 import styles from "./styles.module.scss"
@@ -54,7 +54,7 @@ export function DiscoverNewBook() {
             </div>
           </div>
           <div className={styles.cardBookInfoImage}>
-            <img src="/images/hooked-book.png" alt="" />
+            <img src={homeBookObject.volumeInfo.imageLinks?.thumbnail} alt="" />
           </div>
         </div>
       </div>

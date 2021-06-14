@@ -77,11 +77,17 @@
         }
       }
 
-      .cardBookInfoImage {
-        clip-path: inset( 0.1px 0.1px 0.1px 0.1px round 5px);
+      .cardBookInfoImage {        
         margin-right: 20px;
         justify-self: end;
         align-self: center;
+
+        img {
+          width: 72px;
+          height: 111px;
+          object-fit: cover;
+          clip-path: inset( 0.1px 0.1px 0.1px 0.1px round 2.5px);
+        }
       }
     }
   }
