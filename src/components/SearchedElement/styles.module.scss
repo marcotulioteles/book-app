@@ -4,7 +4,8 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     justify-items: center;
-    margin-top: 42px;
+    margin-top: 42px; 
+    margin-bottom: 50px; 
 
     .booksInfo {
       width: 100px;
@@ -35,26 +36,99 @@
       margin-top: 5px;
     }
 
+    // .loadMoreButton {
+    //   width: 120px;
+    //   height: 24px;
+    //   display: flex;
+    //   align-items: center;
+    //   position: fixed; 
+    //   top: 108px; 
+    //   right: 50vw;
+    //   margin-right: -60px;
+    //   margin-bottom: 75px;
+    //   border: 2px solid var(--text-title-section);
+    //   background-color: none;
+    //   border-radius: 4px;
+    //   color: var(--text-title-section);
+      
+      span {
+        flex: 1;
+        height: 24px;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        text-align: center;;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    // }
+
     .loadMoreButton {
       width: 120px;
       height: 24px;
-      position: fixed; 
+      display: flex;
+      background: var(--text-title-section);
+      color: #fff;
+      border: 0.125rem solid var(--text-title-section);
+      position: fixed;
       top: 108px; 
       right: 50vw;
       margin-right: -60px;
       margin-bottom: 75px;
-      border: none;
-      background-color: var(--text-title-section);
-      color: white;
-      border-radius: 4px;
+      z-index: 1;
+      overflow: hidden;
+      border-radius: 3px;
+      cursor: pointer;
+
+      span {
+        flex: 1;
+        height: 100%;
+        font-size: 0.625rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: center;;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 38px;
+      }
+    }
+    .loadMoreButton:hover {
+      color: var(--text-title-section);
+    }
+    .loadMoreButton::after {
+      content: "";
+      background: #ecf0f1;
+      position: absolute;
+      z-index: -1;
+      padding: 0.85em 0.75em;
+      display: block;
+      transition: all 0.35s;
+      top: 0;
+      bottom: 0;
+      left: -100%;
+      right: 100%;
+    }
+    .loadMoreButton:hover::after {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      transition: all 0.35s;
     }
   }
 
   .notFoundMessage {
+    position: fixed;
     width: 100%;
-    height: 50vh;
+    height: 651px;
+    left: 0;
+    font-size: 1.35rem;
+    text-align: center;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
 }

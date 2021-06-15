@@ -6,14 +6,14 @@ import styles from "./styles.module.scss"
 
 export function SearchBook() {
   const [value, setValue] = useState<string>("")
-  const { setDebouncedInput, setIsError, setBooks } = useBooks()
-  
+  const { setDebouncedInput, setIsError, setBooks, debouncedInput } = useBooks()
+
   const debouncedValue = useDebounce<string>(value, 1000)
 
   const handleSearchInput = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value)
   }
-  
+
   useEffect(() => {
     async function loadBooks() {
       try {
@@ -27,19 +27,21 @@ export function SearchBook() {
         setDebouncedInput(debouncedValue)
       }
     }
-      loadBooks()
+    loadBooks()
   }, [debouncedValue])
 
   return (
-    <label className={styles.inputSearchBox}>
-      <img src="/images/search-icon.svg" alt="search-icon" />
-      <input
-        type="search"
-        name=""
-        id=""
-        placeholder="Search Book"
-        onChange={handleSearchInput}
-      />
-    </label>
+    <div className={styles.container}>
+      <label className={styles.inputSearchBox}>
+        <img src="/images/search-icon.svg" alt="search-icon" />
+        <input
+          type="search"
+          name=""
+          id=""
+          placeholder="Search Book"
+          onChange={handleSearchInput}
+        />
+      </label>
+    </div>
   )
 }

@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { FiArrowLeft } from "react-icons/fi"
+import { Link, useHistory } from "react-router-dom"
 import { OptionBarDetailPage } from "../../components/OptionBarDetailPage"
-import { BooksData } from "../../contexts/BooksContext"
+import { BooksData, useBooks } from "../../contexts/BooksContext"
 
 import styles from "./styles.module.scss"
 
@@ -16,13 +17,19 @@ export function Detail() {
     return {}
   })
 
+  let history = useHistory()
+
+  const handleClick = () => {
+    history.push("/")
+  }
+
   return (
     <main className={styles.mainDetail}>
       <div className={styles.container}>
         <div className={styles.headerDetail}>
-          <a href="/">
+          <Link to="/" onClick={handleClick}>
             <FiArrowLeft size={20} style={{ position: "absolute",  top: "55px", left: "33px"}}/>
-          </a>
+          </Link>
           <img src="/images/red-oval.svg" alt="" className={styles.redOval}/>
           <img src="/images/black-oval.svg" alt="" className={styles.blackOval}/>
           <img src="/images/little-oval-full.png" alt="" className={styles.littleOvalFull}/>

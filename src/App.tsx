@@ -9,10 +9,10 @@ export function App() {
     <Router>
       <BooksProvider>
         <Switch>
-          <Route path="/detail">
+          <Route exact path="/detail">
             <Detail />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>

@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState, useContext, SetStateAction } from "react";
+import { createContext, ReactNode, useState, useContext, SetStateAction, useEffect } from "react";
 
 type ImageLinks = {
   smallThumbnail: string;
@@ -35,9 +35,9 @@ const BooksContext = createContext<BooksContextData>({} as BooksContextData)
 
 export function BooksProvider({ children }: BooksProviderProps) {
   const [books, setBooks] = useState<BooksData[]>([])
-  const [debouncedInput, setDebouncedInput] = useState("abc")
+  const [debouncedInput, setDebouncedInput] = useState("")
   const [isError, setIsError] = useState(false)
-    
+  
   return (
     <BooksContext.Provider value={{ books, setBooks, debouncedInput, setDebouncedInput, isError, setIsError, }}>
       {children}

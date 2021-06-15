@@ -37,9 +37,9 @@
       grid-template-columns: 1fr 1fr;
       
       .cardBookInfoText {
-        height:100%;
         margin-left: 20px;
-        z-index: 999;
+        height:100%;
+        z-index: 10;
       }
 
       .cardBookInfoText p:nth-child(1) {

@@ -1,4 +1,6 @@
+import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import { BooksData } from "../../contexts/BooksContext"
 import { api } from "../../services/api"
 import { storeClickedBook } from "../../utils/Functions"
@@ -25,7 +27,7 @@ export function CurrentlyReading() {
     loadHomeBooks()
   }, [isLoading])
 
-  if (isLoading) return(
+  if (isLoading) return (
     <>
       <section className={styles.currentlyReading}>
         <p>...loading</p>
@@ -34,28 +36,30 @@ export function CurrentlyReading() {
   )
 
   return (
-    <a href="/detail" className={styles.currentlyReading} onClick={() => {storeClickedBook(homeBookObject)}}>
+    <Link to="/detail" className={styles.currentlyReading} onClick={() => { storeClickedBook(homeBookObject) }}>
       <div className={styles.titles}>
         <p>Currently Reading</p>
-        <a href="/">All</a>
+        <Link to="/">All</Link>
       </div>
-      <div className={styles.cardBook}>
-        <img src="/images/oval-full.png" alt="" className={styles.ovalFull} />
-        <img src="/images/oval.svg" alt="" className={styles.Oval} />
-        <img src="/images/gray-oval.png" alt="" className={styles.grayOval} />
-        <img src="/images/rectangle.svg" alt="" className={styles.Rectangle} />
-        <div className={styles.bookCoverImage}>
-          <img src={homeBookObject.volumeInfo.imageLinks?.thumbnail} alt=""/>
-        </div>
-        <div className={styles.bookInfo}>
-          <p>{homeBookObject.volumeInfo.title}</p>
-          <p>{homeBookObject.volumeInfo.authors}</p>
-          <div className={styles.chapterMark}>
-            <img src="/images/purple-book.svg" alt="" />
-            <p>Chapter <span>2</span> From 9</p>
+      <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+        <div className={styles.cardBook}>
+          <img src="/images/oval-full.png" alt="" className={styles.ovalFull} />
+          <img src="/images/oval.svg" alt="" className={styles.Oval} />
+          <img src="/images/gray-oval.png" alt="" className={styles.grayOval} />
+          <img src="/images/rectangle.svg" alt="" className={styles.Rectangle} />
+          <div className={styles.bookCoverImage}>
+            <img src={homeBookObject.volumeInfo.imageLinks?.thumbnail} alt="" />
+          </div>
+          <div className={styles.bookInfo}>
+            <p>{homeBookObject.volumeInfo.title}</p>
+            <p>{homeBookObject.volumeInfo.authors}</p>
+            <div className={styles.chapterMark}>
+              <img src="/images/purple-book.svg" alt="" />
+              <p>Chapter <span>2</span> From 9</p>
+            </div>
           </div>
         </div>
-      </div>
-    </a>
+      </motion.div>
+    </Link>
   )
 }
